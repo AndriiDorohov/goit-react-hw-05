@@ -137,7 +137,7 @@ Run the script in the project root (where `src` folder is located):
 rm -f src/App.jsx src/App.css src/main.jsx src/index.css
 
 mkdir -p src/pages
-mkdir -p src/components
+mkdir -p src/components/App
 
 pages=("HomePage" "MoviesPage" "MovieDetailsPage" "NotFoundPage")
 
@@ -179,26 +179,13 @@ EOF
   touch src/components/$component/$component.module.css
 done
 
-cat <<EOF > src/main.jsx
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./index.css";
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-EOF
-
-cat <<EOF > src/App.jsx
+cat <<EOF > src/components/App/App.jsx
 import React, { Suspense, lazy } from "react";
 
-const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
-const MoviesPage = lazy(() => import("./pages/MoviesPage/MoviesPage"));
-const MovieDetailsPage = lazy(() => import("./pages/MovieDetailsPage/MovieDetailsPage"));
-const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
+const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
+const MoviesPage = lazy(() => import("../../pages/MoviesPage/MoviesPage"));
+const MovieDetailsPage = lazy(() => import("../../pages/MovieDetailsPage/MovieDetailsPage"));
+const NotFoundPage = lazy(() => import("../../pages/NotFoundPage/NotFoundPage"));
 
 export default function App() {
   return (
@@ -207,6 +194,25 @@ export default function App() {
     </Suspense>
   );
 }
+EOF
+
+cat <<EOF > src/components/App/App.module.css
+.container {
+  padding: 1rem;
+}
+EOF
+
+cat <<EOF > src/main.jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./components/App/App";
+import "./index.css";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 EOF
 
 cat <<EOF > src/index.css
@@ -226,26 +232,46 @@ body {
   padding: 2rem;
 }
 EOF
+
 ```
 ### Resulting structure example
 
 ```plaintext
 src/
-├── App.jsx
-├── index.css
-├── main.jsx
 ├── components/
+│   ├── App/
+│   │   ├── App.jsx
+│   │   └── App.module.css
 │   ├── MovieCast/
 │   │   ├── MovieCast.jsx
 │   │   └── MovieCast.module.css
 │   ├── MovieList/
+│   │   ├── MovieList.jsx
+│   │   └── MovieList.module.css
 │   ├── MovieReviews/
+│   │   ├── MovieReviews.jsx
+│   │   └── MovieReviews.module.css
 │   ├── NavLink/
+│   │   ├── NavLink.jsx
+│   │   └── NavLink.module.css
 │   └── Navigation/
+│       ├── Navigation.jsx
+│       └── Navigation.module.css
+├── index.css
+├── main.jsx
 └── pages/
     ├── HomePage/
+    │   ├── HomePage.jsx
+    │   └── HomePage.module.css
     ├── MoviesPage/
+    │   ├── MoviesPage.jsx
+    │   └── MoviesPage.module.css
     ├── MovieDetailsPage/
+    │   ├── MovieDetailsPage.jsx
+    │   └── MovieDetailsPage.module.css
     └── NotFoundPage/
+        ├── NotFoundPage.jsx
+        └── NotFoundPage.module.css
+
 
 
