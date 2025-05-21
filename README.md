@@ -1,4 +1,5 @@
 
+
 # Homework
 
 ## Created Repository: `goit-react-hw-05`
@@ -147,7 +148,7 @@ src/
         ├── NotFoundPage.jsx
         └── NotFoundPage.module.css
 
-
+```
 
 
 ## Script for Creating Directory and File Tree
@@ -277,4 +278,5 @@ body {
 EOF
 
 ```
+
 
