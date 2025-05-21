@@ -107,6 +107,49 @@ If the page was refreshed and the location object was lost, return the user to `
 
 Add asynchronous loading of JS code for the app routes using `React.lazy` and `Suspense`.
 
+
+### Resulting structure example
+
+```plaintext
+src/
+├── components/
+│   ├── App/
+│   │   ├── App.jsx
+│   │   └── App.module.css
+│   ├── MovieCast/
+│   │   ├── MovieCast.jsx
+│   │   └── MovieCast.module.css
+│   ├── MovieList/
+│   │   ├── MovieList.jsx
+│   │   └── MovieList.module.css
+│   ├── MovieReviews/
+│   │   ├── MovieReviews.jsx
+│   │   └── MovieReviews.module.css
+│   ├── NavLink/
+│   │   ├── NavLink.jsx
+│   │   └── NavLink.module.css
+│   └── Navigation/
+│       ├── Navigation.jsx
+│       └── Navigation.module.css
+├── index.css
+├── main.jsx
+└── pages/
+    ├── HomePage/
+    │   ├── HomePage.jsx
+    │   └── HomePage.module.css
+    ├── MoviesPage/
+    │   ├── MoviesPage.jsx
+    │   └── MoviesPage.module.css
+    ├── MovieDetailsPage/
+    │   ├── MovieDetailsPage.jsx
+    │   └── MovieDetailsPage.module.css
+    └── NotFoundPage/
+        ├── NotFoundPage.jsx
+        └── NotFoundPage.module.css
+
+
+
+
 ## Script for Creating Directory and File Tree
 
 This bash script automatically sets up the directory structure and initial files for the movie search React project using Vite.
@@ -234,44 +277,4 @@ body {
 EOF
 
 ```
-### Resulting structure example
-
-```plaintext
-src/
-├── components/
-│   ├── App/
-│   │   ├── App.jsx
-│   │   └── App.module.css
-│   ├── MovieCast/
-│   │   ├── MovieCast.jsx
-│   │   └── MovieCast.module.css
-│   ├── MovieList/
-│   │   ├── MovieList.jsx
-│   │   └── MovieList.module.css
-│   ├── MovieReviews/
-│   │   ├── MovieReviews.jsx
-│   │   └── MovieReviews.module.css
-│   ├── NavLink/
-│   │   ├── NavLink.jsx
-│   │   └── NavLink.module.css
-│   └── Navigation/
-│       ├── Navigation.jsx
-│       └── Navigation.module.css
-├── index.css
-├── main.jsx
-└── pages/
-    ├── HomePage/
-    │   ├── HomePage.jsx
-    │   └── HomePage.module.css
-    ├── MoviesPage/
-    │   ├── MoviesPage.jsx
-    │   └── MoviesPage.module.css
-    ├── MovieDetailsPage/
-    │   ├── MovieDetailsPage.jsx
-    │   └── MovieDetailsPage.module.css
-    └── NotFoundPage/
-        ├── NotFoundPage.jsx
-        └── NotFoundPage.module.css
-
-
 
