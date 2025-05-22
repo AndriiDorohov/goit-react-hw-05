@@ -29,7 +29,7 @@
 
 **Links:**
 
-- [🔗 Live Preview on Vercel](https://vercel.com/)
+- [🔗 Live Preview on Vercel](https://goit-react-hw-05-r4cufyr4h-andriis-projects-a2d81702.vercel.app/)
 - [📂 GitHub Repository](https://github.com/AndriiDorohov/goit-react-hw-05)
 
 ---
