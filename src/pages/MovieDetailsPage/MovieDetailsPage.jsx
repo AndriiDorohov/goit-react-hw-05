@@ -4,7 +4,7 @@ import {
   useLocation,
   Navigate,
 } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { fetchMovieDetails, fetchMovieReviews } from "../../services/tmdb";
 import styles from "./MovieDetailsPage.module.css";
 import MovieHeader from "../../components/MovieHeader/MovieHeader";
@@ -15,6 +15,7 @@ export default function MovieDetailsPage() {
   const { movieId } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
+  const backLinkRef = useRef(location.state?.from || "/movies");
 
   const [movie, setMovie] = useState(null);
   const [status, setStatus] = useState("idle");
@@ -66,7 +67,10 @@ export default function MovieDetailsPage() {
 
   return (
     <div className={styles.container}>
-      <MovieHeader movie={movie} onGoBack={() => navigate(from)} />
+      <MovieHeader
+        movie={movie}
+        onGoBack={() => navigate(backLinkRef.current)}
+      />
 
       <h2>Additional information</h2>
 
