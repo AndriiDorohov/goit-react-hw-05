@@ -13,11 +13,90 @@
 - **Default export** (`export default`) is used for components.  
 - The JS code should be clean and readable — use **Prettier**.  
 - Styling should be done using **CSS Modules**.  
+---
+## 🧩 Project Summary
 
+**Movie Search App** — a React-based application built with Vite, utilizing the [TMDB API](https://www.themoviedb.org/) to browse trending movies, search by keyword, and explore movie details including cast and reviews.
 
+### Key Features
+
+- 🔎 Movie search functionality with dynamic and nested routing
+- 🗂 Code-splitting using `React.lazy()` and `Suspense`
+- 🎥 Fetching data from the TMDB API (Trending, Search, Details, Cast, Reviews)
+- 🧭 Navigation state preserved with "Go back" functionality
+- 🧱 Modular structure using CSS Modules and component folders
+- 🚀 Deployed on [Vercel](https://vercel.com)
+
+**Links:**
+
+- [🔗 Live Preview on Vercel](https://vercel.com/)
+- [📂 GitHub Repository](https://github.com/AndriiDorohov/goit-react-hw-05)
+
+---
+## 📦 Technology Stack and Versions
+
+This project was built using the following key dependencies and versions:
+
+- **React:** 19.1.0  
+- **React DOM:** 19.1.0  
+- **React Router DOM:** 7.6.0  
+- **Vite:** 6.3.5  
+- **Axios:** 1.9.0  
+- **clsx:** 2.1.1  
+- **modern-normalize:** 3.0.1  
+
+### Development dependencies:
+
+- **ESLint:** 9.25.0  
+- **@vitejs/plugin-react-swc:** 3.9.0  
+- **eslint-plugin-react-hooks:** 5.2.0  
+- **eslint-plugin-react-refresh:** 0.4.19  
 
 ---
 
+> Note: These versions reflect the package versions used at the time of development to ensure compatibility and stability.
+
+---
+
+## ✨ Additional Improvements
+
+> These improvements go beyond the homework requirements and demonstrate initiative and attention to developer experience and user interface:
+
+- ✅ **Automated File Structure Setup**  
+  Custom Bash script that generates folders and starter component files for both pages and reusable UI.
+- ✅ **Centralized API Service Layer**  
+  All API logic is abstracted into a separate `services/tmdb/` module with clear separation of concerns.
+- ✅ **Additional Component: `MovieHeader`**  
+  Reusable component to display movie title, poster, and metadata in a consistent layout.
+- ✅ **Robust Error Handling**  
+  User-friendly error messages for failed API requests or empty search results.
+- ✅ **Enhanced UX**  
+  - "Go back" link behavior accounts for browser refresh  
+  - Loading state fallback via `Suspense`  
+  - **Alternating background colors for movie reviews** — improved readability by styling review items with alternating background shades using CSS `:nth-child(even)` selector.
+- ✅ **Clean, Consistent Code Style**  
+  Enforced using **Prettier**, with readable, formatted JSX and CSS Modules.
+
+## 🚀 Getting Started Locally
+
+
+1. **Clone the repository:**
+
+```bash
+git clone https://github.com/yourusername/goit-react-hw-05.git
+```
+2.  **Install dependencies:**
+    
+```bash
+npm install 
+```
+
+3.  **Start the development server:**
+    
+```bash
+npm run dev
+```
+---
 
 ## Movie Search
 
@@ -25,9 +104,6 @@ Create an application with routing to search for movies by title.
 Watch the demo video to see how the app works.
 
 [![Watch the demo](https://img.youtube.com/vi/dS3nCSGsr8I/0.jpg)](https://youtu.be/dS3nCSGsr8I)
-
-
-
 
 ### Movie Search Service
 
@@ -120,36 +196,39 @@ src/
 │   ├── MovieCast/
 │   │   ├── MovieCast.jsx
 │   │   └── MovieCast.module.css
+│   ├── MovieHeader/
+│   │   ├── MovieHeader.jsx
+│   │   └── MovieHeader.module.css
 │   ├── MovieList/
 │   │   ├── MovieList.jsx
 │   │   └── MovieList.module.css
 │   ├── MovieReviews/
 │   │   ├── MovieReviews.jsx
 │   │   └── MovieReviews.module.css
-│   ├── NavLink/
-│   │   ├── NavLink.jsx
-│   │   └── NavLink.module.css
 │   └── Navigation/
 │       ├── Navigation.jsx
 │       └── Navigation.module.css
+├── pages/
+│   ├── HomePage/
+│   │   ├── HomePage.jsx
+│   │   └── HomePage.module.css
+│   ├── MovieDetailsPage/
+│   │   ├── MovieDetailsPage.jsx
+│   │   └── MovieDetailsPage.module.css
+│   ├── MoviesPage/
+│   │   ├── MoviesPage.jsx
+│   │   └── MoviesPage.module.css
+│   └── NotFoundPage/
+│       ├── NotFoundPage.jsx
+│       └── NotFoundPage.module.css
+├── services/
+│   └── tmdb/
+│       ├── config.js
+│       └── index.js
 ├── index.css
 ├── main.jsx
-└── pages/
-    ├── HomePage/
-    │   ├── HomePage.jsx
-    │   └── HomePage.module.css
-    ├── MoviesPage/
-    │   ├── MoviesPage.jsx
-    │   └── MoviesPage.module.css
-    ├── MovieDetailsPage/
-    │   ├── MovieDetailsPage.jsx
-    │   └── MovieDetailsPage.module.css
-    └── NotFoundPage/
-        ├── NotFoundPage.jsx
-        └── NotFoundPage.module.css
 
 ```
-
 
 ## Script for Creating Directory and File Tree
 

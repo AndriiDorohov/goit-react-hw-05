@@ -1,0 +1,42 @@
+.castList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  justify-content: center;
+}
+
+.castItem {
+  width: 150px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.castImage,
+.noImage {
+  width: 120px;
+  height: 180px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+.noImage {
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 14px;
+  font-style: italic;
+  user-select: none;
+}

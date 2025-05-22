@@ -1,0 +1,44 @@
+.container {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.code {
+    font-size: 96px;
+    color: #444;
+    margin-bottom: 12px;
+}
+
+.message {
+    font-size: 24px;
+    color: #666;
+    margin-bottom: 24px;
+}
+
+.link {
+    padding: 12px 24px;
+    cursor: pointer;
+    border: 2px solid #333;
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.3s ease;
+
+    user-select: none;
+
+    text-decoration: none;
+    color: inherit;
+    transform: translateY(0);
+}
+
+.link:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
